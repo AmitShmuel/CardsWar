@@ -1,0 +1,14 @@
+#ifndef ASSIST_H
+#define ASSIST_H
+#include <stdio.h>
+#include "Deck.h"
+
+typedef enum {Quit , Play} Choice;
+
+Choice PLAYorQUIT();
+
+void Get_Kind(card_kind kind);
+
+void Get_Name(card_name name);
+
+#endif

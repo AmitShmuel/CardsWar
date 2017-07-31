@@ -1,0 +1,42 @@
+#ifndef DECK_H
+#define DECK_H
+#define Deck_Size 52
+
+
+typedef struct Card_t* Card;
+
+typedef enum {Fail , Success} Result;
+
+typedef enum {playerOne = 1 , playerTwo} Winner;
+
+typedef enum {
+	
+	Two = 2, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King, Ace
+	
+}card_name;
+
+typedef enum {
+	
+	Spades, Clubs, Diamonds, Hearts
+	
+}card_kind;
+
+Card Create(Card Head , short PlayerNumber);
+
+Result Shuffle(Card Head);
+
+Result Print(Card Head , short PlayerNum);
+
+Winner OpenCard(Card Headplayer1 , Card Headplayer2);
+
+void Add_Cards(Winner winner , Card* Head1 , Card* Head2 , Card* HeadPot1 , Card* HeadPot2);
+
+void War(Card* Head1 , Card* Head2 , Card* HeadPot1 , Card* HeadPot2);
+
+void End_of_Deck(Card* Head1, Card* Head2 , Card* HeadPot1 , Card* HeadPot2);
+
+Result Find_Winner(Card Head1 , Card Head2 , Card HeadPot1 , Card HeadPot2);
+
+Result FreeList(Card Head);
+
+#endif
